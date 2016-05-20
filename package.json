@@ -1,27 +1,27 @@
 {
-  "name": "nfhs-date-diff",
-  "version": "0.0.1",
-  "description": "small date library to deal with NFHS dates as suggested here https://www.nfhs.org/media/885653/calendar-brochure.pdf",
-  "main": "index.js",
-  "scripts": {
-    "build": "babel -d build index.js && browserify build/index.js -o build/nfhs-date-diff.js -d",
-    "clean": "rm -rf build",
-    "build:clean": "npm run clean && npm run build",
-    "test": "mocha --compilers js:babel-core/register"
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "babel-cli": "^6.9.0",
-    "babel-preset-es2015": "^6.9.0",
-    "browserify": "^13.0.1",
-    "chai": "^3.5.0",
-    "mocha": "^2.4.5"
-  }
+	"name": "nfhs-date-diff",
+	"version": "0.0.2",
+	"description": "small date library to deal with NFHS dates as suggested here https://www.nfhs.org/media/885653/calendar-brochure.pdf",
+	"main": "index.js",
+	"scripts": {
+		"build": "babel -d build index.js && browserify build/index.js -o build/nfhs-date-diff.js -d",
+		"clean": "rm -rf build",
+		"build:clean": "npm run clean && npm run build",
+		"test": "mocha --compilers js:babel-core/register"
+	},
+	"babel": {
+		"presets": [
+			"es2015"
+		]
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"babel-cli": "^6.9.0",
+		"babel-preset-es2015": "^6.9.0",
+		"browserify": "^13.0.1",
+		"chai": "^3.5.0",
+		"mocha": "^2.4.5"
+	}
 }
