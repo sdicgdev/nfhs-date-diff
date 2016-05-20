@@ -1,0 +1,18 @@
+{
+  "name": "nfhs-date-diff",
+  "version": "0.0.0",
+  "description": "small date library to deal with NFHS dates as suggested here https://www.nfhs.org/media/885653/calendar-brochure.pdf",
+  "main": "build/index.js",
+  "authors": [
+    "evan@sdicg.com"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/sdicgdev/nfhs-date-diff",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
