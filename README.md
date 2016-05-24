@@ -11,7 +11,7 @@ Primary Functions
 -----------------
 
 ```javascript
-export function years_future(date, num_years)
+function years_future(date, num_years)
 ```
 return an array of JS Date objects representing progressive 
 dates each one year further into the future than the last. The 
