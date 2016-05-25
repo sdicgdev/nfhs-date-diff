@@ -52,9 +52,8 @@ function next_year(date) {
   var week_number = weeks_between(first_full_week(start_year, start_month), date);
   var next_july = first_full_week(start_year + 1, start_month);
   var next_year_week = sunday_of(new Date(+next_july + week_number * WEEK_IN_MICROSECONDS));
-  var day_of_week = date.getDay();
 
-  return new Date(next_year_week.getFullYear(), next_year_week.getMonth(), next_year_week.getDate() + date.getDay(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+  return new Date(next_year_week.getFullYear(), next_year_week.getMonth(), next_year_week.getDate() + date.getDay(), date.getHours(), date.getMinutes(), date.getSeconds());
 }
 
 function years_future(date, num_years) {

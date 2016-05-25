@@ -187,6 +187,15 @@ describe("getting the next year for a date", ()=>{
   it("should be on the same day of the week", ()=>{
     expect(date.getDay()).to.equal(a_year_later.getDay());
   })
+  it("should be at the same hour of the day", ()=>{
+    expect(date.getUTCHours()).to.equal(a_year_later.getUTCHours());
+  })
+  it("should be at the same minute of the hour", ()=>{
+    expect(date.getUTCMinutes()).to.equal(a_year_later.getUTCMinutes());
+  })
+  it("should be at the same second of the minute", ()=>{
+    expect(date.getUTCSeconds()).to.equal(a_year_later.getUTCSeconds());
+  })
   it("should be the same number of weeks from the first full week of July", ()=>{
     let first_year = date_lib.weeks_between(july_prior, date);
     let second_year = date_lib.weeks_between(next_july, a_year_later);
@@ -224,11 +233,14 @@ describe("getting the next year for a date", ()=>{
 });
 
 describe("getting many future years for a date", ()=>{
-  let result, date, num_years
+  let result, date, num_years, week_diff;
   beforeEach(()=>{
-    num_years = 4;
+    num_years = 15;
     date = new Date(2015, 5, 15);
     result = date_lib.years_future(date, num_years);
+    week_diff = result.map((date, i) => {
+     return date_lib.weeks_between(date_lib.first_full_week(2015+i, 6), date)
+    })
   })
   afterEach(()=>{
     num_years = undefined;
@@ -242,12 +254,46 @@ describe("getting many future years for a date", ()=>{
     expect(result.filter(d => d instanceof Date).length).to.equal(num_years)
   })
   it("the first two dates should be a year apart", ()=>{
-    expect(date_lib.weeks_between(result[0], result[1])).to.equal(52);
+    expect(week_diff[0]).to.equal(week_diff[1]);
   });
   it("the second two dates should be a year apart", ()=>{
-    expect(date_lib.weeks_between(result[1], result[2])).to.equal(52);
+    expect(week_diff[0]).to.equal(week_diff[2]);
   });
-  it("the last two dates should be a year apart", ()=>{
-    expect(date_lib.weeks_between(result[2], result[3])).to.equal(52);
+  it("the third two dates should be a year apart", ()=>{
+    expect(week_diff[0]).to.equal(week_diff[3]);
+  });
+  it("the fourth two dates should be a year apart", ()=>{
+    expect(week_diff[0]).to.equal(week_diff[4]);
+  });
+  it("the fifth two dates should be a year apart", ()=>{
+    expect(week_diff[0]).to.equal(week_diff[5]);
+  });
+  it("the sixth two dates should be a year apart", ()=>{
+    expect(week_diff[0]).to.equal(week_diff[6]);
+  });
+  it("the seventh two dates should be a year apart", ()=>{
+    expect(week_diff[0]).to.equal(week_diff[7]);
+  });
+  it("the eighth two dates should be a year apart", ()=>{
+    expect(week_diff[0]).to.equal(week_diff[8]);
+  });
+  it("the ninth two dates should be a year apart", ()=>{
+    expect(week_diff[0]).to.equal(week_diff[9]);
+  });
+  it("the tenth two dates should be a year apart", ()=>{
+    expect(week_diff[0]).to.equal(week_diff[10]);
+  });
+  it("the eleventh two dates should be a year apart", ()=>{
+    expect(week_diff[0]).to.equal(week_diff[11]);
+  });
+  it("the twelfth two dates should be a year apart", ()=>{
+    expect(week_diff[0]).to.equal(week_diff[12]);
+  });
+  it("the thirteenth two dates should be a year apart", ()=>{
+    expect(week_diff[0]).to.equal(week_diff[13]);
+  });
+  it("the fourteenth two dates should be a year apart", ()=>{
+    expect(week_diff[0]).to.equal(week_diff[14]);
   });
 })
+
