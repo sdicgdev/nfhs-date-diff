@@ -1,6 +1,6 @@
 {
 	"name": "nfhs-date-diff",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "small date library to deal with NFHS dates as suggested here https://www.nfhs.org/media/885653/calendar-brochure.pdf",
 	"main": "index.js",
 	"scripts": {
