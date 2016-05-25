@@ -40,7 +40,7 @@ export function next_year(date, start_month=START_MONTH){
   const next_year_week = sunday_of(new Date(+(next_july)+(week_number*WEEK_IN_MICROSECONDS)));
   const day_of_week = date.getDay();
 
-  return new Date(+(next_year_week)+(DAY_IN_MICROSECONDS*day_of_week));
+  return new Date(next_year_week.getFullYear(), next_year_week.getMonth(), next_year_week.getDate()+date.getDay(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds()) 
 }
 
 export function years_future(date, num_years, result=[]) {

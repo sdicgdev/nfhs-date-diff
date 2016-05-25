@@ -55,7 +55,7 @@ function next_year(date) {
   var next_year_week = sunday_of(new Date(+next_july + week_number * WEEK_IN_MICROSECONDS));
   var day_of_week = date.getDay();
 
-  return new Date(+next_year_week + DAY_IN_MICROSECONDS * day_of_week);
+  return new Date(next_year_week.getFullYear(), next_year_week.getMonth(), next_year_week.getDate() + date.getDay(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
 }
 
 function years_future(date, num_years) {
